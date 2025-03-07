@@ -1,5 +1,4 @@
 init python:
-	#start_mod('spot2')
 	set_fps(20)
 	set_can_mouse_hide(False)
 	config.has_autosave = False
