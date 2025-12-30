@@ -28,9 +28,7 @@ init:
 	style tutorial_lesson_name is text:
 		font 'Fregat_Bold'
 		text_size 0.03
-		text_align 'center'
 		xalign 0.5
-		xsize style.tutorial_lesson_image.xsize
 	
 	style tutorial_tag_container is null:
 		xalign 0.5
@@ -169,46 +167,48 @@ screen tutorial_menu:
 				null:
 					style 'tutorial_lesson_btn'
 					
-					if i in tutorial_menu.category_lessons:
-						$ name, pretty_name, image, tags1, tags2 = tutorial_menu.category_lessons[i]
-						button:
-							style 'tutorial_lesson_btn'
-							alpha 0 if lessons.cur_label else 1
-							hovered   'tutorial_menu.hovered_lesson = name'
-							unhovered 'if tutorial_menu.hovered_lesson == name: tutorial_menu.hovered_lesson = None'
-							action lessons.start(tutorial_menu.cur_category, i)
+					if i not in tutorial_menu.category_lessons:
+						continue
+					
+					$ name, pretty_name, image, tags1, tags2 = tutorial_menu.category_lessons[i]
+					button:
+						style 'tutorial_lesson_btn'
+						alpha 0 if lessons.cur_label else 1
+						hovered   'tutorial_menu.hovered_lesson = name'
+						unhovered 'if tutorial_menu.hovered_lesson == name: tutorial_menu.hovered_lesson = None'
+						action lessons.start(tutorial_menu.cur_category, i)
+					
+					vbox:
+						skip_mouse True
+						spacing 0.01
+						xalign 0.5
+						ypos ypos
 						
-						vbox:
-							skip_mouse True
-							spacing 0.01
-							xalign 0.5
-							ypos ypos
+						image tutorial_menu.get_lesson_image(image):
+							style 'tutorial_lesson_image'
+						
+						text _(pretty_name):
+							style 'tutorial_lesson_name'
+							underline tutorial_menu.hovered_lesson == name
+						
+						null:
+							style 'tutorial_tag_container'
+							alpha 1 if tutorial_menu.hovered_lesson == name else 0
 							
-							image tutorial_menu.get_lesson_image(image):
-								style 'tutorial_lesson_image'
-							
-							text _(pretty_name):
-								style 'tutorial_lesson_name'
-								underline tutorial_menu.hovered_lesson == name
-							
-							null:
-								style 'tutorial_tag_container'
-								alpha 1 if tutorial_menu.hovered_lesson == name else 0
-								
-								for xpos in (0.0, 0.6):
-									vbox:
-										xpos xpos
-										
-										for tag in (tags1 if xpos < 0.5 else tags2):
-											hbox:
-												spacing 0.001
-												
-												text '•':
-													style 'tutorial_tag_text'
-													color '#FFF'
-												
-												text tag:
-													style 'tutorial_tag_text'
+							for xpos in (0.0, 0.6):
+								vbox:
+									xpos xpos
+									
+									for tag in (tags1 if xpos < 0.5 else tags2):
+										hbox:
+											spacing 0.001
+											
+											text '•':
+												style 'tutorial_tag_text'
+												color '#FFF'
+											
+											text tag:
+												style 'tutorial_tag_text'
 	
 	null:
 		#$ tutorial_menu.count_pages = 3

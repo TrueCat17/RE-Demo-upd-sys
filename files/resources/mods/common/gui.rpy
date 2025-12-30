@@ -18,7 +18,7 @@ init -1000 python:
 	
 	
 	gui.dialogue_text_font = 'Fregat'
-	gui.dialogue_box_bg = 'images/gui/dialogue/dialogue_box.webp'
+	gui.dialogue_box_bg = 'images/gui/dialogue/box.webp'
 	gui.dialogue_box_width = 1701 / 2560
 	gui.dialogue_box_height = 306 / 1440
 	
@@ -73,7 +73,7 @@ init -1000 python:
 	gui.history_fog_alpha = 0.3
 	gui.history_bg = 'images/gui/menu/history/bg.webp'
 	
-	gui.history_name_bg = 'images/gui/menu/history/history_name_bg.webp'
+	gui.history_name_bg = 'images/gui/menu/history/name_bg.webp'
 	gui.history_name_bg_style = 'history_name_bg'
 	
 	gui.history_name_xpos = 0.028

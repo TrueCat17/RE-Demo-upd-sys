@@ -1,5 +1,5 @@
 init python:
-	lessons.add_current('play, stop, queue, fadein')
+	lessons.add_current('play, stop, fadein, fadeout')
 
 label music_and_sounds:
 	show rn 2 smile
@@ -44,8 +44,9 @@ label music_and_sounds:
 	rn "Я расскажу о двух самых важных."
 	rn "Добавление [sts]fadeout 1[ste] в конце укажет, что сначала нужно плавно, за секунду, снизить громкость текущей мелодии до нуля, и лишь потом начать новую."
 	rn "Точно также есть параметр [sts]fadein 1.5[ste], который указывает время плавного повышения громкости."
-	rn "Конечно, их можно использовать и одновременно."
 	
+	show rn 1 smile with dissolve
+	rn "Конечно, их можно использовать и одновременно."
 	
 	show rn 1 smile:
 		rn_moving 0.5 xpos 0.5

@@ -44,30 +44,22 @@ init python:
 	current_part.text_template = 'Part:\n[%s]'
 
 
-init:
-	style current_part_image is image:
-		corner_sizes -1
-		size (0.2, 0.12)
-		size_min (200,  75)
-		size_max (280, 100)
-	
-	style current_part_text is text:
-		align 0.5
-		text_align 'center'
-		
-		font 'Fregat'
-		color '#08F'
-		
-		text_size 0.035
-		text_size_min 18
-		text_size_max 26
-
-
 screen current_part:
 	alpha current_part.get_alpha()
 	
 	image current_part.bg:
-		style 'current_part_image'
+		corner_sizes -1
+		size (0.2, 0.12)
+		size_min (200,  75)
+		size_max (280, 100)
 		
 		text current_part.get_text():
-			style 'current_part_text'
+			align 0.5
+			text_align 'center'
+			
+			font 'Fregat'
+			color '#08F'
+			
+			text_size 0.035
+			text_size_min 18
+			text_size_max 26

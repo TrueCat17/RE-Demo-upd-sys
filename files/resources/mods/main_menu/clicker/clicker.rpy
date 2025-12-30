@@ -2,7 +2,6 @@ init -1 python:
 	def clicker__show():
 		global quick_menu
 		quick_menu = False
-		window_hide()
 		
 		show_screen('clicker')
 		clicker.show_time = get_game_time()
@@ -48,7 +47,7 @@ init -1 python:
 		money = clicker.int_to_parted_str(clicker.data['money'])
 		crd = _('crd.')
 		
-		screen_tmp.crd_next_text = '+%s %s/%s' % (reward, crd, _('trip'))
+		screen_tmp.crd_reward_text = '+%s %s/%s' % (reward, crd, _('trip'))
 		screen_tmp.crd_text = '%s %s' % (money, crd)
 	
 	def clicker__save():
@@ -127,7 +126,7 @@ init -1 python:
 			price = clicker.get_upgrade_price(equipment_name, equipment_level)
 		else:
 			unlock_price = clicker.equipment_unlock_price[equipment_name]
-			price = clicker.base * unlock_price * max(equipment_level, 1)
+			price = clicker.base * unlock_price
 		
 		if price > clicker.data['money']:
 			clicker.no_money_time = get_game_time()
@@ -149,8 +148,8 @@ init -1 python:
 		
 		if clicker.data['money'] >= clicker.target_millions * 1e6:
 			if not clicker.data['success']:
+				clicker.data['success'] = True
 				notification.out('Win')
-			clicker.data['success'] = True
 	
 	
 	def clicker__reset():
@@ -245,7 +244,7 @@ init -1 python:
 	clicker.fog = im.rect('#0002')
 	clicker.bg  = im.rect('#08F7')
 	
-	clicker.trip_progress_bar = im.color(style.clicker_button.hover, '#FFF')
+	clicker.trip_progress_bar = style.clicker_button.hover
 
 
 screen clicker:
@@ -260,7 +259,7 @@ screen clicker:
 	button:
 		ground clicker.fog
 		hover  clicker.fog
-		size 1.0
+		size   1.0
 		mouse  False
 		action clicker.close
 	
@@ -278,9 +277,8 @@ screen clicker:
 			text (_('Equipment levels') + ':'):
 				style 'clicker_text'
 			
-			for equipment_name, equipment_level in clicker.data.items():
-				if equipment_name in ('money', 'trips', 'success', 'version'):
-					continue
+			for equipment_name in clicker.info.keys():
+				$ screen_tmp.level = clicker.data[equipment_name]
 				
 				hbox:
 					xpos 50 / 1200
@@ -291,17 +289,17 @@ screen clicker:
 						xsize 250 / 1200
 						yalign 0.5
 					
-					text str(equipment_level):
+					text str(screen_tmp.level):
 						style 'clicker_text'
 						font 'Consola'
 						text_align 'right'
 						xsize 70 / 1200
 						yalign 0.5
 					
-					if equipment_level:
+					if screen_tmp.level:
 						textbutton '+':
 							style 'clicker_upgrade_button'
-							action clicker.upgrade(equipment_name, equipment_level)
+							action clicker.upgrade(equipment_name, screen_tmp.level)
 						
 						text clicker.info[equipment_name]:
 							style 'clicker_text'
@@ -310,12 +308,12 @@ screen clicker:
 					
 					else:
 						$ screen_tmp.unlock_price = clicker.equipment_unlock_price[equipment_name]
-						$ screen_tmp.price = clicker.base * screen_tmp.unlock_price * max(equipment_level, 1)
+						$ screen_tmp.price = clicker.base * screen_tmp.unlock_price
 						$ screen_tmp.price_str = clicker.int_to_parted_str(screen_tmp.price)
 						textbutton ('%s: %s %s' % (_('Unlock'), screen_tmp.price_str, _('crd.'))):
 							style 'clicker_button'
 							xsize 450 / 1200
-							action clicker.upgrade(equipment_name, equipment_level)
+							action clicker.upgrade(equipment_name, 0)
 		
 		
 		text clicker.msg:
@@ -355,8 +353,7 @@ screen clicker:
 			unhovered clicker.clear_msg('R')
 			action clicker.reset
 		
-		key 'R':
-			action clicker.reset
+		key 'R' action clicker.reset
 		
 		
 		vbox:
@@ -401,7 +398,7 @@ screen clicker:
 						xsize screen_tmp.xsize
 						ysize screen_tmp.ysize
 				
-				text screen_tmp.crd_next_text:
+				text screen_tmp.crd_reward_text:
 					style 'clicker_text'
 					xalign 1.0
 					text_valign 'center'

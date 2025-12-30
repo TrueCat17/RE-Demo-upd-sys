@@ -39,9 +39,9 @@ init:
 		font 'Calibri'
 		text_size 0.02
 		text_size_min 16
-		color '#DDD'
+		color        '#DDD'
 		outlinecolor '#000'
-		hover_color '#DDD'
+		hover_color        '#DDD'
 		hover_outlinecolor '#000'
 		ground im.rect('#00000001')
 		hover  im.rect('#00000001')
@@ -101,9 +101,10 @@ init python:
 	history.padding = [15, 10, 15, 10]
 	
 	history.slider_ground = im.rotozoom('mods/rpg/gui/bar/ground.webp', 90, 1)
-	history.slider_hover  = im.rotozoom('mods/rpg/gui/bar/hover.webp', 90, 1)
+	history.slider_hover  = im.rotozoom('mods/rpg/gui/bar/hover.webp',  90, 1)
 	history.slider_button_style = 'rpg_history_btn'
 	
+	gui.history_name_bg = None
 	gui.history_name_xpos = 0.125
 	gui.history_name_ypos = 0
 	gui.history_name_width = 0.125
@@ -121,15 +122,6 @@ init python:
 	gui.history_text_suffix = ''
 	th.history_text_prefix = '~ '
 	th.history_text_suffix = ' ~'
-	
-	gui.history_name_bg = None
-	gui.history_name_xpos = 0.125
-	
-	gui.history_text_xpos = 0.13
-	gui.history_text_width = 0.5
-	
-	gui.history_thought_xpos = 0.08
-	gui.history_thought_width = 0.6
 	
 	
 	tutorial = Character('', what_color = '#F80',

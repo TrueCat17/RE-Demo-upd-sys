@@ -122,9 +122,6 @@ init:
 		hover_color '#000'
 	$ help.slider_button_style = 'help_slider_button'
 	
-	style pause_screen_button:
-		hover_color '#FFF'
-	
 	style history_title is text:
 		color '#FFF'
 		text_size 0.04

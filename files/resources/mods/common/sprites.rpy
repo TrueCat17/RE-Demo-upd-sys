@@ -4,9 +4,9 @@ init -1000:
 	$ config.width, config.height = 2560, 1440
 	
 	
-	image rn 1 bored:
+	image rn 1 bore:
 		size (540, 1091)
-		contains im.composite((540, 1091), (0, 0), "images/sprites/rn/1.webp", (157, 182), "images/sprites/rn/bored.webp"):
+		contains im.composite((540, 1091), (0, 0), "images/sprites/rn/1.webp", (157, 182), "images/sprites/rn/bore.webp"):
 			xpos 37
 	image rn 1 laugh:
 		size (540, 1091)
@@ -25,9 +25,9 @@ init -1000:
 		contains im.composite((540, 1091), (0, 0), "images/sprites/rn/1.webp", (157, 175), "images/sprites/rn/wink.webp"):
 			xpos 37
 	
-	image rn 2 bored:
+	image rn 2 bore:
 		size (690, 1091)
-		contains im.composite((690, 1091), (0, 0), "images/sprites/rn/2.webp", (307, 182), "images/sprites/rn/bored.webp"):
+		contains im.composite((690, 1091), (0, 0), "images/sprites/rn/2.webp", (307, 182), "images/sprites/rn/bore.webp"):
 			xpos -39
 	image rn 2 laugh:
 		size (690, 1091)
@@ -46,9 +46,9 @@ init -1000:
 		contains im.composite((690, 1091), (0, 0), "images/sprites/rn/2.webp", (307, 175), "images/sprites/rn/wink.webp"):
 			xpos -39
 	
-	image rn 3 bored:
+	image rn 3 bore:
 		size (767, 1091)
-		contains im.composite((767, 1091), (0, 0), "images/sprites/rn/3.webp", (307, 182), "images/sprites/rn/bored.webp")
+		contains im.composite((767, 1091), (0, 0), "images/sprites/rn/3.webp", (307, 182), "images/sprites/rn/bore.webp")
 	image rn 3 laugh:
 		size (767, 1091)
 		contains im.composite((767, 1091), (0, 0), "images/sprites/rn/3.webp", (308, 178), "images/sprites/rn/laugh.webp")
@@ -62,9 +62,9 @@ init -1000:
 		size (767, 1091)
 		contains im.composite((767, 1091), (0, 0), "images/sprites/rn/3.webp", (307, 175), "images/sprites/rn/wink.webp")
 	
-	image rn 4 bored:
+	image rn 4 bore:
 		size (556, 1091)
-		contains im.composite((556, 1091), (0, 0), "images/sprites/rn/4.webp", (160, 182), "images/sprites/rn/bored.webp"):
+		contains im.composite((556, 1091), (0, 0), "images/sprites/rn/4.webp", (160, 182), "images/sprites/rn/bore.webp"):
 			xpos 42
 	image rn 4 laugh:
 		size (556, 1091)
@@ -83,9 +83,9 @@ init -1000:
 		contains im.composite((556, 1091), (0, 0), "images/sprites/rn/4.webp", (160, 175), "images/sprites/rn/wink.webp"):
 			xpos 42
 	
-	image rn 5 bored:
+	image rn 5 bore:
 		size (482, 1091)
-		contains im.composite((482, 1091), (0, 0), "images/sprites/rn/5.webp", (157, 182), "images/sprites/rn/bored.webp"):
+		contains im.composite((482, 1091), (0, 0), "images/sprites/rn/5.webp", (157, 182), "images/sprites/rn/bore.webp"):
 			xpos 7
 	image rn 5 laugh:
 		size (482, 1091)
@@ -103,4 +103,3 @@ init -1000:
 		size (482, 1091)
 		contains im.composite((482, 1091), (0, 0), "images/sprites/rn/5.webp", (157, 175), "images/sprites/rn/wink.webp"):
 			xpos 7
-	

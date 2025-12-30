@@ -1,10 +1,11 @@
 init python:
-	lessons.add_current('character, text, if, for, jump, return')
+	lessons.add_current('character, text, if, while, jump, return')
 
 
 label simple_examples:
-	show rn 1 laugh
-	rn "Добро пожаловать в длиннейший урок в начальной категории!"
+	show rn 1 smile
+	rn "Добро пожаловать в длиннейший урок из начальной категории!"
+	show rn 1 laugh with dissolve
 	rn "Это будет долго, но оно того стоит, поехали!"
 	
 	show rn 2 smile with dissolve
@@ -57,8 +58,8 @@ label simple_examples:
 
 label simple_examples_move_to_left:
 	show rn 2 smile:
-		rn_moving 0.5 xpos 0.28
-	pause 0.5
+		rn_moving 0.4 xpos 0.28
+	pause 0.4
 
 label simple_examples_move_to_center:
 	show rn 2 smile:
@@ -159,7 +160,7 @@ label simple_examples_tags:
 	rn "Как ты можешь заметить, для указания на начало тэга используется символ [sts]{{[ste]."
 	extend " И как и в случае с [sts][[[ste], чтобы вывести его как символ, его тоже нужно продублировать: [sts]{{{{[ste]."
 	
-	rn "Кстати, будь внимателен: тэги должны закрываться в том же порядке, в каком они открывались."
+	rn "Кстати, будь внимателен: тэги должны закрываться в обратном порядке (относительно их открытия)."
 	rn "Вот так писать нельзя: [in_tags('b|123|i|456|/b|789|/i', real_tags = False)]."
 	
 	show rn 2 smile with dissolve
@@ -195,7 +196,7 @@ label simple_examples_python:
 	
 	rn "Перейдём к способам запуска python-кода в сценарии или в [sts]init[ste]-секциях."
 	
-	show rn 4 smile:
+	show rn 4 smile with dissolve:
 		rn_moving 0.5 xpos 0.28
 	
 	python:
@@ -376,7 +377,7 @@ label simple_examples_text_displaying:
 	
 	$ current_part.hide()
 	$ set_mode_nvl()
-	rn "Также есть [sts]NLV[ste]-режим, который выглядит вот так."
+	rn "Также есть [sts]NVL[ste]-режим, который выглядит вот так."
 	rn "Он включается вызовом [sts]$ set_mode_nvl()[ste]."
 	rn "Как видишь, здесь не происходит автоматического удаления предыдущих реплик."
 	rn "Зато это можно сделать вручную с помощью команды [text_code('nvl clear')]."

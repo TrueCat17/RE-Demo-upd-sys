@@ -33,5 +33,5 @@ label conv_part_02:
 	rn "Присмотрись к себе повнимательнее..."
 	show rn 2 laugh with dissolve
 	rn "Возможно, однажды мы сможем на весь мир разоблачить ложь мороженщиков!"
-	show rn 2 bored with dissolve
+	show rn 2 bore with dissolve
 	rn "Или нет."

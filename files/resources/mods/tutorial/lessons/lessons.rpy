@@ -12,13 +12,14 @@ init -1 python:
 		pretty_name = name.replace('_', ' ').capitalize()
 		
 		dirname = os.path.dirname(file)
-		
 		category = os.path.basename(dirname)
-		image = dirname.replace('lessons', 'lesson_images') + '/' + num + '.webp'
+		
+		i = dirname.rfind('lessons')
+		image = dirname[:i] + 'lesson_images' + dirname[i + len('lessons'):] + '/%s.webp' % num
 		if not os.path.exists(image):
 			image = im.rect('#888', 448, 256)
 		
-		tags = [i for i in tags_str.split(', ')] if tags_str else []
+		tags = tags_str.split(', ') if tags_str else []
 		tags1, tags2 = [], []
 		for i, tag in enumerate(tags):
 			(tags2 if i % 2 else tags1).append(tag)
@@ -49,6 +50,7 @@ label start_lesson:
 	
 	$ pause_screen.items.insert(0, ['Tutorial Menu', tutorial_menu.restart])
 	
+	$ db.skip_tab = False
 	call expression lessons.cur_label
 	$ db.skip_tab = False
 	

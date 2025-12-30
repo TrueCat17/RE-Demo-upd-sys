@@ -47,5 +47,8 @@ label start:
 	$ lessons.cur_label = None
 	$ tutorial_menu.start(from_middle = True)
 	
+	$ code.hide()
+	$ current_part.hide()
+	
 	while True:
 		pause 1

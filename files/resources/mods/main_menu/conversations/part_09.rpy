@@ -27,4 +27,4 @@ label conv_part_09:
 	rn "Удачи!"
 	rn "Во всех начинаниях, продолжениях и заканчиваниях."
 	show rn 1 laugh with dissolve
-	rn "Ахаха~."
+	rn "Ахаха~"

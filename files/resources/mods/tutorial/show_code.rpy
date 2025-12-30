@@ -1,5 +1,7 @@
 init:
 	style code_text is text:
+		xpos 0.04
+		yalign 0.5
 		font 'Monospace'
 		text_size 0.035
 		text_size_min 14
@@ -21,7 +23,8 @@ init python:
 	
 	def code__hide():
 		code.old_data, code.new_data = code.new_data, None
-		code.old_data.hide_time = get_game_time()
+		if code.old_data:
+			code.old_data.hide_time = get_game_time()
 	
 	def code__showed():
 		return (code.old_data is not None) or (code.new_data is not None)
@@ -77,11 +80,6 @@ init python:
 	code.old_data = None
 	code.new_data = None
 	
-	code.old_ysize = 0
-	code.new_ysize = 0
-	
-	code.last_old_data_time = -100
-	
 	code.bg = im.round_rect('#111C', 50, 50, 16)
 
 
@@ -99,11 +97,7 @@ screen code:
 		alpha code.get_bg_alpha()
 		
 		for data in (code.old_data, code.new_data):
-			if not data:
-				continue
-			
-			text data.text:
-				style 'code_text'
-				xpos 0.04
-				yalign 0.5
-				alpha code.get_text_alpha(data)
+			if data:
+				text data.text:
+					style 'code_text'
+					alpha code.get_text_alpha(data)

@@ -15,14 +15,15 @@ init python:
 		ysize = round(h / common_screen.zoom)
 		common_screen.size = (xsize, ysize)
 	
-	def common_screen__hide_screen(ignore_name, *args, **kwargs):
-		black_cover.start()
-		func = Function(common_screen.orig_hide_screen, common_screen.name, *args, **kwargs)
+	def common_screen__hide_screen(name):
+		if black_cover.get_alpha() > 0:
+			return
 		
 		global hide_screen
 		hide_screen = common_screen.orig_hide_screen
 		
-		set_timeout(func, black_cover.appearance_time)
+		black_cover.start()
+		set_timeout(HideScreen(name), black_cover.appearance_time)
 	
 	
 	build_object('common_screen')
@@ -41,10 +42,9 @@ init python:
 			tmp_style = style[style_name]
 			if tmp_style.text_size:
 				tmp_style.text_size *= common_screen.gui_zoom
-			tmp_style.xsize *= common_screen.gui_zoom
+			if style_name not in ('page_button', 'prefs_page_button', 'return_button'):
+				tmp_style.xsize *= common_screen.gui_zoom
 			tmp_style.ysize *= common_screen.gui_zoom
-		for style_name in ('page_button', 'prefs_page_button', 'return_button'):
-			style[style_name].xsize /= common_screen.gui_zoom
 		style.bar.xsize = 0.2
 		
 		for style_name in ('menu_text', 'bool_text'):
@@ -96,7 +96,9 @@ init python:
 		screen_tmp.xpos = style.pages_vbox.xpos if is_main_menu else tmp_style.get_current('ypos')
 		screen_tmp.ypos = tmp_style.get_current('ypos')
 		
-		screen_tmp.btns = ('Demos', 'Utils', 'Preferences', 'Load') + (() if is_main_menu else ('Save', ))
+		screen_tmp.btns = ('Demos', 'Utils', 'Preferences', 'Load')
+		if not is_main_menu:
+			screen_tmp.btns += ('Save', )
 	
 	def call_common_screen_buttons_action(btn):
 		show_screen(btn.lower())
@@ -134,18 +136,19 @@ screen common_screen(name):
 	$ common_screen.update_params(screen.name)
 	
 	image 'images/bg/room_screen.webp':
-		zoom get_stage_width() / 2560
 		size (2560, 1440)
+		zoom get_stage_width() / 2560
 		
 		null:
 			clipping True
-			pos (absolute(494.5), 201)
+			xpos absolute(494.5)
+			ypos 201
 			size common_screen.size
 			zoom common_screen.zoom
 			
 			null:
-				size get_stage_size()
 				align 0.5
+				size get_stage_size()
 				
 				if common_screen.name in ('demos', 'utils'):
 					use demos
@@ -157,7 +160,8 @@ screen common_screen(name):
 				use common_screen_buttons
 		
 		image 'images/bg/room_screen_over.webp':
-			pos (absolute(537.5), 1212)
+			xpos absolute(537.5)
+			ypos 1212
 			size (144, 37)
 	
 	if is_main_menu:

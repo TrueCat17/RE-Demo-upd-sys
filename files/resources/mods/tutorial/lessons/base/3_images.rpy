@@ -10,7 +10,7 @@ label images:
 			image rn sml = "images/spr/rn/sml.png"
 			image rn hpp = "images/spr/rn/hpp.png"
 		''')
-	show rn 4 smile:
+	show rn 4 smile with dissolve:
 		rn_moving 0.5 xpos 0.28
 	
 	rn "Это делается в [sts]init[ste]-блоке."
@@ -18,7 +18,7 @@ label images:
 	
 	rn "На этом экране мало места, так что используются сокращения для слов [sts]sprites[ste], [sts]smile[ste] и [sts]happy[ste]."
 	
-	show rn 3 bored with dissolve
+	show rn 3 bore with dissolve
 	rn "В своей игре ты, конечно, не должен их использовать!"
 	rn "Ведь это - просто пример."
 	
@@ -109,6 +109,18 @@ label images:
 	show rn 1 smile with dissolve
 	rn "В некоторых случаях нужно показать нового персонажа, но поставить его позади уже существующего на сцене."
 	rn "Для этого используется ключевое слово [sts]behind[ste]."
+	
+	
+	python:
+		code.show('''
+			scene bg entry
+			show rn smile
+			with fade
+		''')
+	
+	show rn 3 smile with dissolve
+	rn "Кстати! {w=0.33}Если нужно показать несколько изображений сразу, с применением эффекта, но без пауз между показами, [sts]with[ste] можно использовать вот так."
+	rn "В этом случае он как бы \"собирает\" все команды [sts]scene[ste] и [sts]show[ste], идущие до него подряд, а затем одновременно применяет к ним указанный эффект."
 	
 	
 	$ code.show('$ config.width, config.height = ...')

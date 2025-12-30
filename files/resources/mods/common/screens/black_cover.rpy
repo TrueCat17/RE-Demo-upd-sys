@@ -21,7 +21,6 @@ init -1 python:
 	
 	build_object('black_cover')
 	
-	black_cover.start_time = -100
 	black_cover.appearance_time = 0.35
 	black_cover.bg = im.rect('#000')
 	

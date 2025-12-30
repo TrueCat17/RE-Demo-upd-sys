@@ -7,7 +7,7 @@ init python:
 			'clicker':  clicker.show,
 		}
 		btn_coords = {
-			'demos':    (0,    433),
+			'demos':    (   0, 433),
 			'tutorial': (1383, 820),
 			'clicker':  (1915, 676),
 		}
@@ -33,9 +33,7 @@ init python:
 	
 	
 	def btns__get():
-		rn_showed = renpy.showing('rn')
-		if not rn_showed:
-			btns.spent += get_last_tick()
+		btns.spent += get_last_tick()
 		
 		backlight_time = 0.5
 		backlight_cycle_time = 10
@@ -43,13 +41,11 @@ init python:
 		
 		time_shift = backlight_cycle_time / 2
 		
+		dtime = (btns.spent + time_shift) % backlight_cycle_time
+		index = int(dtime / backlight_time)
+		
 		for i, btn in enumerate(btns.props.values()):
-			dtime = (btns.spent + time_shift) % backlight_cycle_time
-			index = int(dtime / backlight_time)
 			backlight = (index == i * 2)
-			
-			if rn_showed:
-				backlight = False
 			
 			selected = btns.hovered_name == btn.name
 			if backlight and not selected and btns.spent < backlight_work_time:

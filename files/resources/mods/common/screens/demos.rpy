@@ -50,7 +50,6 @@ init -10 python:
 	
 	demos.slot_ysize = 0.1405
 	
-	demos.init()
 	signals.add('language', demos.init)
 	
 	set_timeout(Eval("load_image(gui.bg('main_bg'))"), 0.8)
@@ -116,7 +115,6 @@ screen demos:
 										
 										image picture:
 											size int(0.1 * get_stage_height())
-											yalign 0.5
 										
 										null size 0.02
 										

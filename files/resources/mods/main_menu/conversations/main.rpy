@@ -24,7 +24,7 @@ init python:
 	
 	
 	def conversation__prepare(wait):
-		conversation.parts = parts = []
+		parts = []
 		part_num = 0
 		while True:
 			part_num += 1
@@ -34,17 +34,17 @@ init python:
 				break
 			parts.append(part_num)
 		
-		if not conversation.parts:
+		if not parts:
 			conversation.label = None
 			conversation.wait_before_time = None
 			return
 		
+		conversation.part_num = random.choice(parts)
+		conversation.label = 'conv_part_%02i' % conversation.part_num
+		
 		conversation.wait_before_time = get_game_time()
 		if wait:
 			conversation.wait_before_time += random.randint(20, 40)
-		
-		conversation.part_num = part_num = random.choice(parts)
-		conversation.label = 'conv_part_%02i' % part_num
 	
 	
 	def conversation__start():
@@ -82,7 +82,7 @@ init python:
 		if cur_pose == 0: return
 		if screen_tmp.alpha != 1: return
 		if conversation.wait_before_time is None: return
-		if conversation.wait_before_time > get_game_time(): return
+		if get_game_time() < conversation.wait_before_time: return
 		
 		screen_tmp.zorder = 1
 		screen_tmp.has_action = True

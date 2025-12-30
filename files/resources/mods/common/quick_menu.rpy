@@ -17,4 +17,4 @@ init python:
 				item[1] = show_prefs
 			quick_menu_screen.items.append(item)
 			
-			quick_menu_screen.prefixes[item[0]] = '{image=images/gui/dialogue/btn_icons/' + btn_name.lower() + '.webp} '
+			quick_menu_screen.prefixes[item[0]] = '{image=images/gui/dialogue/btn_icons/%s.webp} ' % btn_name.lower()

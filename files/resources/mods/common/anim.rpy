@@ -16,43 +16,36 @@ init -10 python:
 		'planet': dict(
 			xcount = 10,
 			ycount = 6,
-			frames = 60,
 			pos = (1077, 624),
 		),
 		'monitor1': dict(
 			xcount = 8,
 			ycount = 5,
-			frames = 40,
 			pos = (1445, 580),
 		),
 		'monitor2': dict(
 			xcount = 5,
 			ycount = 8,
-			frames = 40,
 			pos = (1772, 540),
 		),
 		'monitor3': dict(
 			xcount = 10,
 			ycount = 4,
-			frames = 40,
 			pos = (1422, 824),
 		),
 		'monitor4': dict(
 			xcount = 10,
 			ycount = 4,
-			frames = 40,
 			pos = (1466, 776),
 		),
 		'monitor5': dict(
 			xcount = 5,
 			ycount = 8,
-			frames = 40,
 			pos = (1737, 839),
 		),
 		'monitor6': dict(
 			xcount = 8,
 			ycount = 5,
-			frames = 40,
 			pos = (2019, 792),
 		),
 	}
@@ -63,8 +56,7 @@ init -10 python:
 		params['image'] = 'images/anim/' + name + ('.webp' if name != 'planet' else '.png')
 		params['first_frame'] = params['image'].replace('anim', 'anim/first_frames')
 		
-		animations = config.animations
-		if animations:
+		if config.animations:
 			w, h = get_image_size(params['image'])
 			params['size'] = (w // params['xcount'], h // params['ycount'])
 		else:
@@ -88,7 +80,8 @@ init -10 python:
 		if not params['animations']:
 			return (0, 0, 1.0, 1.0)
 		
-		frame = params['frame'] = (params['frame'] + 1) % params['frames']
+		frames = params['xcount'] * params['ycount']
+		frame = params['frame'] = (params['frame'] + 1) % frames
 		xcount = params['xcount']
 		
 		xframe = frame % xcount
