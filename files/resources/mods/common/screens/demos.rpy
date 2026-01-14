@@ -34,13 +34,11 @@ init -10 python:
 	
 	
 	def demos__show():
-		black_cover.start()
-		set_timeout(ShowScreen('demos'), black_cover.appearance_time)
+		black_cover.start(ShowScreen('demos'))
 		common_screen.show_time = get_game_time() + black_cover.appearance_time * 2
 	
 	def demos__hide():
-		black_cover.start()
-		set_timeout(HideScreen(common_screen.name), black_cover.appearance_time)
+		black_cover.start(HideScreen(common_screen.name))
 	
 	
 	build_object('demos')
@@ -49,6 +47,7 @@ init -10 python:
 	persistent.setdefault('demos_page', 0)
 	
 	demos.slot_ysize = 0.1405
+	demos.hovered_mod = None
 	
 	signals.add('language', demos.init)
 	
@@ -94,21 +93,24 @@ screen demos:
 						$ page = demos[page_name]
 						
 						for params in page:
-							if not params:
-								null:
-									xsize 0.3
-									ysize demos.slot_ysize
-							
-							else:
-								$ mod_name, dir_name, picture = params
+							null:
+								xsize 0.3
+								ysize demos.slot_ysize
 								
-								button:
-									xsize 0.3
-									ysize demos.slot_ysize
-									ground gui.slot_hover
-									action start_mod(dir_name)
+								if params:
+									$ mod_name, dir_name, picture = params
+									
+									button:
+										xsize 0.3
+										ysize demos.slot_ysize
+										ground gui.slot_hover
+										hover  style.button.hover
+										hovered   'demos.hovered_mod = dir_name'
+										unhovered 'if demos.hovered_mod == dir_name: demos.hovered_mod = None'
+										action start_mod(dir_name)
 									
 									hbox:
+										skip_mouse True
 										yalign 0.5
 										
 										null size 0.02
@@ -120,6 +122,7 @@ screen demos:
 										
 										text mod_name:
 											font 'Fregat'
+											color '#000' if demos.hovered_mod == dir_name else '#FFF'
 											text_size 0.035
 											text_size_min 26
 											text_size_max 0.045
