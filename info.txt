@@ -354,7 +354,7 @@ resources/images/sprites/rn/surprise.png||
 resources/images/sprites/rn/wink.webp|de9db3ecf19454714ab5dbc09060a22d10693db355df32dfd98a9cd025d21691|15174
 resources/mods/||0
 resources/mods/common/||0
-resources/mods/common/anim.rpy|fa5427effff2bfe710d6aa7615cb81fe141e1befcc931a2cffd616446fdfef34|3651
+resources/mods/common/anim.rpy|6cc33622c9f1e430379264968b5ef1d5d24f6b540a890f4f7df49a4dd7774589|3579
 resources/mods/common/bg.rpy|323d9596cc1a8eee61fb9e4f89c63134eb91c2ff92e2860d9d8ed2a4be4e054b|429
 resources/mods/common/characters.rpy|526d057ad20b95248d638f1eec66427c9c59f8ea7a6cc5b21f655d03655300fe|897
 resources/mods/common/config.rpy|dd8787679269ed8e08675a2ad7b5541c84361649657fe3d456843e56bf2b75a1|63
