@@ -51,14 +51,14 @@ Ren-Engine/rpy/screens/history.rpy|36cbf248d652136f0cd9cf6f56c8a8472cced257f5faf
 Ren-Engine/rpy/screens/hotkeys.rpy|9e34a77022c28454e3b6815a3ff0bbdaf65429d145c93d8df13083984ff3fd2a|5505
 Ren-Engine/rpy/screens/input.rpy|b17be9327ea2d26a2b34755f5fad5724da7d3e91091c6a372598d293f72d4079|9448
 Ren-Engine/rpy/screens/inventory.rpy|0cb9a18ea382d31277f505d8e828501c5406cb3682eca941e025c2f2dbfd86d5|15212
-Ren-Engine/rpy/screens/load.rpy|d44eb8b02de8ac8a55b8ba99e5f02766d75364b1441a0fb7bfd48ad473140ec9|132
+Ren-Engine/rpy/screens/load.rpy|ca6ef7fa906123214674da2a6b0b3b620ef99c050eff98a601bca21882eeb38c|132
 Ren-Engine/rpy/screens/location.rpy|96e3f4e8ca8bb5254690ee4cd410f02dea09b085fb390ccdaf7985908895e93d|9642
 Ren-Engine/rpy/screens/mods.rpy|b59d40d509b812464bfb808174c54737d0dbe974099c9d89d45d08bf59064c5e|1342
 Ren-Engine/rpy/screens/notification.rpy|510414a129673a370a2b7099c1e354851d9b01b27584389e77fd306ccefb401b|2211
 Ren-Engine/rpy/screens/pause.rpy|50ef511caf2c632f63eae374e0c1a7550604c7814235db87e68c5fc6797cb643|2882
-Ren-Engine/rpy/screens/preferences.rpy|9ed5e09ce0b43b3ede163df8da4f38f1fc0b30cd9e3fe7d90d1cb0d7d92ed8c3|10394
+Ren-Engine/rpy/screens/preferences.rpy|e3a3c6558e1e74b506997ce7fc1156385ddff83a7b850428cffdd8ac63b42019|10394
 Ren-Engine/rpy/screens/quick_menu.rpy|137e5578b9d4c285af61cd071f5a2c3621901bb7005d15e8450f492bce0dbe0b|2175
-Ren-Engine/rpy/screens/save.rpy|a0248c691251d7623e94dd86e9c5f1c83ff706deb4c387adad406fd1842d3a00|146
+Ren-Engine/rpy/screens/save.rpy|8c8af922282d09344ae57f3c95479e57718d6dcd31f05dc3dec260b406cbec59|146
 Ren-Engine/rpy/screens/slider_v.rpy|7b99b2c75fdb3ec02c6c07c8942e8c36993699909cee81fd63d28b27afa37059|4181
 Ren-Engine/rpy/screens/slots.rpy|fe91fe08dd9bc1368fbf8d02973796a8bfc0bf1bf3e7cd6afa20f89c11538c0b|1768
 Ren-Engine/rpy/screens/sprites.rpy|8391675d3a4cdeb2a8ec656c58f1c06a4d8957dfdaad84f18db24b5299303872|7091
@@ -95,7 +95,7 @@ Ren-Engine/rpy/vn/||
 Ren-Engine/rpy/vn/sprite.rpy||
 Ren-Engine/rpy/vn/sprite_animation.rpy||
 Ren-Engine/rpy/vn/sprite_animation_data.rpy||
-Ren-Engine/version|2c775152c69ae5f4e196ef40e766ee50bf176c454a9dbbb19ba5c7287554e0da|17
+Ren-Engine/version|2806cbd787040ec2f30e710d53618e10bdf6641b1efed4664261db92128f5229|17
 Ren-Engine/wine-fix.txt|4bc680d19af1c02555b1626f4cb6d444255860631e724e44bd6be29cfc9c4197|103
 resources/||0
 resources/fonts/||0
@@ -366,7 +366,7 @@ resources/mods/common/preferences.rpy|754c76e7a059bc8e8474a79b5424ba0b5044c9211c
 resources/mods/common/quick_menu.rpy|cdeaa61e2e18506db017081bb05a1529dd104026eaee14a1a843f303b834e6b3|630
 resources/mods/common/screens/||0
 resources/mods/common/screens/black_cover.rpy|21261d06e86cbe827d9dd119499524f0de30f785fa9e6e3912fa83aa287d8b49|1563
-resources/mods/common/screens/common.rpy|62e89c7815938e7fbd73cb6213520d288b4e7d8b07365682606da1c8ad1308ee|5753
+resources/mods/common/screens/common.rpy|b411b94bb3ea68018e9a7adb5f4f45ae8c0887ae3a72d66dccfc83e73b673adc|5753
 resources/mods/common/screens/demos.rpy|9240388fc8a23f289a4f9f08d4219698b45bd4617d4837bb72aeffef35ae13c8|4131
 resources/mods/common/screens/exit.webp|8a125958bca160805af38867e7d907462b8d4bc1238845cfbe4dead92762b0fe|54
 resources/mods/common/sprites.rpy|b02f45d9bf9988df247cafbf5916b46b60aeaaaed2e9e6c69d93f05bb7449ed9|4184
@@ -421,7 +421,7 @@ resources/mods/guitar_hero/vn_text_tl/russian.rpy|b1d173da3c740742882ca05dd8ee49
 resources/mods/main_menu/||0
 resources/mods/main_menu/authors.rpy|d00a3239a7210f67e8ba1083a993e335effae80eeda0da4aeefa8b4918106201|1199
 resources/mods/main_menu/btns/||0
-resources/mods/main_menu/btns/btns.rpy|313c6611cdcacadbe8ca7341b3fa0f6f1fec4126182f98a8277830eee643f6b2|1891
+resources/mods/main_menu/btns/btns.rpy|bd18bb9fea46b628c17fdd9e9a5290ee76de8e8a1c0989873e2f89d93264e60d|2143
 resources/mods/main_menu/btns/clicker.webp|b170558f5024b6829cc044cc36d607cdad560ec728b2c24bdcfcdec118f0fbc2|442
 resources/mods/main_menu/btns/demos.webp|8e460c89d89e6f3ca7a7ee4fd071dd747fc479a2f48cd0061da62dbb094769a3|494
 resources/mods/main_menu/btns/tutorial.webp|6a7becd00adf9c77cfbd5871db8bb9be80df3e9ed84ac4a96b7663948a53ae0e|1716
