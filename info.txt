@@ -1,11 +1,11 @@
 Ren-Engine Demo.exe|257d133e48c202bcdd878c0102b18508210ad2c44c8c719e76205f583cf8d433|48640
 Ren-Engine Demo.sh|e1c896464b9193428e530082b14c9dfa0296d31be2a57b13ded7d91346c6fd34|393
 Ren-Engine/||0
-Ren-Engine/Ren-Engine Demo.exe|31c52e13945c45c53c7a1b3fc8bd5031b73942230eb44738bcb4731e3e5eceb0|5379072
+Ren-Engine/Ren-Engine Demo.exe|e661419d981d7f7857b46ae978964410d9cf3c17a085c49c8f1566418664eebe|5379584
 Ren-Engine/SDL2.dll||
 Ren-Engine/cygwin1.dll|13c2528a2dd6e247520f75c77cad6b1756f8ca763224920fd4db576ae596b6d0|1572079
-Ren-Engine/linux-i686|738b52b6cf03aa1df982ede15d3038c56f47b257f731810533e75b1c8149d76d|4465364
-Ren-Engine/linux-x86_64|39c8c4107cb9dc605815da2486bf30f6b611384e1bf98375e966e794677bd1b1|4642984
+Ren-Engine/linux-i686|361ed7c77cced73ca5640910dc2c4d16570120c92b3ac3735286cfccfbe506d2|4753452
+Ren-Engine/linux-x86_64|2c39d4a2d20cb4a0559451aae57f70e6acad84feca0aa1d8f602ba7faf72ca8b|4647644
 Ren-Engine/py_libs/||0
 Ren-Engine/py_libs/lib/||0
 Ren-Engine/py_libs/lib/python311.zip||
@@ -96,7 +96,7 @@ Ren-Engine/rpy/vn/||
 Ren-Engine/rpy/vn/sprite.rpy||
 Ren-Engine/rpy/vn/sprite_animation.rpy||
 Ren-Engine/rpy/vn/sprite_animation_data.rpy||
-Ren-Engine/version|1dd527a50e87ab4f4df56b7f0eeac5dd287f21e7a84c041fbbe6db7995dc5a37|17
+Ren-Engine/version|b896530ec62031af63f9a70d573268fa902888ba6fe67b31b75de8f34877d0c6|17
 Ren-Engine/wine-fix.txt|8c08ee4dd2d23cf171571f172ab3a40bdf307d76920230cc53522c0eadb6f369|104
 resources/||0
 resources/fonts/||0
@@ -534,7 +534,7 @@ resources/mods/rpg_editor/tl/russian/main.rpy|56ce322c843147d75714b9db22f69606df
 resources/mods/rpg_editor/tl/russian/readme.txt|c388040d2f1952788cae7b637e9009b0fcfcda51ebd5a8dbccff1055872e1d97|6186
 resources/mods/simple_civ/||0
 resources/mods/simple_civ/achivements.rpy|0cb3dee6385696fbf57ec3d2fa21f967f084420d4887e705520213b4a496ef47|3372
-resources/mods/simple_civ/bot.rpy|01012279bb194d59ca5b9bdbf0cc6e8b088cd176ed899baca71d3385145e51f9|19162
+resources/mods/simple_civ/bot.rpy|994c14faa1cfb08e22d363e62f41bfcb835060fb648b6fac7b515667d83455d7|19589
 resources/mods/simple_civ/buildings/||0
 resources/mods/simple_civ/buildings/cost.rpy||
 resources/mods/simple_civ/buildings/main.rpy|f1d8f79553bbfb297b725b5c0c5c70f00069ae834717100c7d69c102801e3950|1270
@@ -677,19 +677,22 @@ resources/mods/sprite_moving/tl/russian/readme.txt|a56f22d2732b314a3bc8d481e6f64
 resources/mods/tetris_games/||0
 resources/mods/tetris_games/life/||0
 resources/mods/tetris_games/life/life.rpy|6da569da11cbb0a562319cecd44a49a64682855327c875dc0efa734fda97bc2a|5912
-resources/mods/tetris_games/main.rpy|fafd334d1832ce05da2a4762254d703672d22abf65bcf44fd691f11ecca97597|2385
+resources/mods/tetris_games/main.rpy|132804a150ed29668596ad12265f433bdd95fc833252908d37d906b92844bede|2413
 resources/mods/tetris_games/name|18c76195165b282a7e3ade4b918c6220c742158a2ce20275260eb98efeec8c9d|45
 resources/mods/tetris_games/snake/||0
 resources/mods/tetris_games/snake/snake.rpy|928aa65885a55f229edf10317d2802f4f3a03b0806a4d487b9fd5cba6b40bff5|5232
 resources/mods/tetris_games/snake/snake_levels.rpy|4be952f2509f4cbdebc61bee66f0eb6fbce76b7d006c56378337020bd5d31c6e|3185
-resources/mods/tetris_games/styles.rpy|09f7e02740a5041fa5bce6c7a414278cd03f57a36540d330799b25b4ae05bc14|397
+resources/mods/tetris_games/styles.rpy|c5199f6e38c21392d55fe7a809d884a40b673ca593f5fd90496cc519c3b93866|508
 resources/mods/tetris_games/tanks/||0
 resources/mods/tetris_games/tanks/bullet.rpy|6aa956349b3710a404cf814fc8d0156d0e86e6a310bebb84de915e87453eb683|1852
 resources/mods/tetris_games/tanks/tank.rpy|1167b4225b3528a88fd519cd36ba3b2278966de6401a0192e160822bc111283b|11118
-resources/mods/tetris_games/tanks/tanks.rpy|70e587503f2a407c656b3a369efee1cfdd8b763d2187ef154bd7450132db0f36|8774
+resources/mods/tetris_games/tanks/tanks.rpy|b30c37c2d8c69e334609442353ea02df786d0b3f69446f83b69bc129ff6af0c3|8692
 resources/mods/tetris_games/tanks/tanks_levels.rpy|661d717692cfe2935b8abf4fed6571a5cb6aaf55f59112a86783ca9a4462b0a1|2899
+resources/mods/tetris_games/tetris/||0
+resources/mods/tetris_games/tetris/figures.rpy|0c73225eb94b0cca476dbfd51bd86428edc3b6c2b95c71928fa927b4444edc78|1606
+resources/mods/tetris_games/tetris/tetris.rpy|f6f1d09fa0e75cc16d64acf9a64809637a14cc9a2291a65a3e4a8400dd9e8454|9614
 resources/mods/tetris_games/tl/||0
-resources/mods/tetris_games/tl/russian.rpy|25a5dfed7c7706003636f952a88f92f4add5e5f43b1e9896f22d8ea50a1e4f06|1057
+resources/mods/tetris_games/tl/russian.rpy|d862dd8cda3b899c845c8e2ba9fb3fb505688cad059415d79087ac3f423097bd|1245
 resources/mods/tetris_games/tl/russian/||
 resources/mods/tetris_games/tl/russian/main.rpy||
 resources/mods/tower_defence/||0
